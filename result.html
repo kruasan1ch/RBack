@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Рассчет функции</title>
+        <meta charset="utf-8">
+        <style>
+            table {
+                border:1px solid #b3adad;
+                border-collapse:collapse;
+                padding:5px;
+            }
+            table th {
+                border:1px solid #b3adad;
+                padding:5px;
+                background: #f0f0f0;
+                color: #313030;
+            }
+            table td {
+                border:1px solid #b3adad;
+                text-align:center;
+                padding:5px;
+                background: #ffffff;
+                color: #313030;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Результирующая таблица</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Наименование аргумента</th>
+                    <th>Значение аргумента</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% $arguments.each do |argument| %>
+                        <tr>
+                            <td><%= argument.name %></td>
+                            <td><%= argument.value %></td>
+                        </tr>
+                    <%end %>
+            </tbody>
+        </table>
+        <p>Результат вычисления: </p><%= f %><br>
+        <input type="button" value="Обратно" onclick="history.back()">
+    </body>
+</html>
